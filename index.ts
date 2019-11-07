@@ -1,7 +1,8 @@
 import Server from "./classes/server";
-import router from './routes/router';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import morgan from 'morgan';
+import routerUsers from "./routes/user.router";
 
 
 const server = new Server();
@@ -16,6 +17,12 @@ server.start();
 // CORS
 server.app.use( cors({ origin: true, credentials: true}));
 
+// Morgan
+server.app.use( morgan('dev'))
 
-// Rutas de Servicio
-server.app.use('/', router);
+// ******************************** Rutas de Servicio *******************************
+//Ruta para Users
+server.app.use('/user', routerUsers);
+
+//server.app.user('/', router)
+
