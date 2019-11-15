@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import morgan from 'morgan';
 import routerUsers from "./routes/user.router";
+import routerProducts from './routes/product.router';
 
 
 const server = new Server();
@@ -23,6 +24,10 @@ server.app.use( morgan('dev'))
 // ******************************** Rutas de Servicio *******************************
 //Ruta para Users
 server.app.use('/user', routerUsers);
+
+
+// Ruta para los productos
+server.app.use('/product', routerProducts);
 
 //server.app.user('/', router)
 
