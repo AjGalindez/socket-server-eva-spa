@@ -5,4 +5,5 @@ export interface User {
     correo: string;
     contrasenia: string;
     url_imagen: string;
+    empleada: number;
 }
